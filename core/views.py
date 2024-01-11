@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, HttpResponse, redirect, get_object_or_404
 from .models import Eventos
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout
@@ -12,6 +12,7 @@ def submit_login(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         usuario = authenticate(username=username, password=password)
+
         if usuario is not None:
             login(request, usuario)
             return redirect('/')
@@ -42,7 +43,7 @@ def criar_evento(request):
     dados = {}
     if id_evento:
         print(id_evento)
-        dados['evento']: Eventos.objects.get(id=id_evento)
+        dados['evento'] = get_object_or_404(Eventos, id=id_evento)
         print(dados)
     return render(request, 'evento.html', dados)
 
@@ -53,7 +54,17 @@ def submit_evento(request):
         data_evento = request.POST.get('data_evento')
         descricao = request.POST.get('descricao')
         usuario = request.user
-        Eventos.objects.create(titulo=titulo, data_evento=data_evento, descricao=descricao, usuario=usuario)
+        id_evento = request.POST.get('id_evento')
+
+        if id_evento:
+            evento = Eventos.objects.get(id=id_evento)
+            if evento.usuario == usuario:
+                evento.titulo = titulo
+                evento.data_evento = data_evento
+                evento.descricao = data_evento
+                evento.save()
+        else:
+            Eventos.objects.create(titulo=titulo, data_evento=data_evento, descricao=descricao, usuario=usuario)
     return redirect('/')
 
 @login_required(login_url='/login/')
