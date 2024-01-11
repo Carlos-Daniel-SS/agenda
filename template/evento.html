@@ -5,7 +5,7 @@
         <div align="center">
             <label>Título do Evento</label>
             <br>
-            <input type="text" name="titulo" size="20">
+            <input type="text" name="titulo" size="20" value="{{ evento.titulo }}">
             <br>
             <label>Data do Evento</label>
             <br>
@@ -13,7 +13,7 @@
             <br>
             <label>Descrição</label>
             <br>
-            <textarea name="descricao" rows="5" cols="23"></textarea>
+            <textarea name="descricao" rows="5" cols="23">{{ evento.descricao }}</textarea>
             <br>
             <button style="background-color: #008000;" type="submit">Salvar</button>
 
