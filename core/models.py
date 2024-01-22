@@ -29,7 +29,6 @@ class Eventos(models.Model):
             return True
         return False
     def get_condicao_evento(self):
-        diferenca = datetime.now() - self.data_evento
-        if diferenca <= 1:
-            return True
-        return False
+        diferenca = self.data_evento - datetime.now()
+        return diferenca.seconds/60/60 <= 1
+

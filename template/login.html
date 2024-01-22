@@ -18,7 +18,7 @@
     rel="stylesheet"
     />
 </head>
-<section class="background-radial-gradient overflow-hidden">
+<section class="background-radial-gradient overflow-hidden" style="height: 100vh; width: 100vw;">
   <style>
     .background-radial-gradient {
       background-color: hsl(218, 41%, 15%);
@@ -66,13 +66,10 @@
       <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
         <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
           Site para  <br />
-          <span style="color: hsl(218, 81%, 75%)">aprendizado do Django</span>
+          <span style="color: hsl(218, 81%, 75%)">Agendamentos</span>
         </h1>
         <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Temporibus, expedita iusto veniam atque, magni tempora mollitia
-          dolorum consequatur nulla, neque debitis eos reprehenderit quasi
-          ab ipsum nisi dolorem modi. Quos?
+          Site desenvolvido para treinamentos das habilidades em django.
         </p>
       </div>
 
@@ -96,13 +93,13 @@
                 <label class="form-label" for="form3Example4">Password</label>
               </div>
 
-              <!-- Checkbox -->
+              <!-- Checkbox
               <div class="form-check d-flex justify-content-center mb-4">
                 <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
                 <label class="form-check-label" for="form2Example33">
                   Subscribe to our newsletter
                 </label>
-              </div>
+              </div>-->
 
               <!-- Submit button -->
               <button type="submit" class="btn btn-primary btn-block mb-4">
@@ -110,6 +107,7 @@
               </button>
 
               <!-- Register buttons -->
+              <!--
               <div class="text-center">
                 <p>or sign up with:</p>
                 <button type="button" class="btn btn-link btn-floating mx-1">
@@ -127,11 +125,11 @@
                 <button type="button" class="btn btn-link btn-floating mx-1">
                   <i class="fab fa-github"></i>
                 </button>
-              </div>
+              </div>-->
             </form>
             <div class="form-check d-flex justify-content-center mb-4">
             {% for message in messages %}
-            <strong>Error: </strong>{{message}}
+            <strong>Error: </strong> {{ message }}
             {% endfor %}
             </div>
           </div>

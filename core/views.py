@@ -41,12 +41,9 @@ def ver_evento(request, titulo_evento):
 @login_required(login_url='/login/')
 def criar_evento(request):
     id_evento = request.GET.get('id')
-    print(id_evento)
     dados = {}
     if id_evento:
-        print(id_evento)
         dados['evento'] = get_object_or_404(Eventos, id=id_evento)
-        print(dados)
     return render(request, 'evento.html', dados)
 
 @login_required(login_url='/login/')

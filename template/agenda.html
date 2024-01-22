@@ -1,19 +1,25 @@
 {% extends "model-page.html" %}
 
 {% block content %}
-    <h2>Agendamentos</h2>
-    <ul>
-        {% for evento in eventos %}
-            <li>
-                <div style={% if evento.get_evento_atrasado %}
-                                "color:red"
-                            {% endif %}>
 
-                    {{evento.titulo}} - {{evento.get_data_evento}}
-                    (<a href="evento/?id={{ evento.id }}">Editar</a>
-                    / <a href="evento/delete/{{ evento.id }}/">Excluir</a> )
+<h1 align="center" style="margin-top:60px; padding-bottom:30px;" xmlns="http://www.w3.org/1999/html">Agendamentos</h1>
+    {% for evento in eventos %}
+
+
+        <div align="center">
+            <div class="card text-center border-success mb-3 border border-3 bg-light mb-3{% if evento.get_evento_atrasado %} border-danger mb-3 {% endif %} {% if evento.get_condicao_evento %} border-warning mb-3 {% endif %}>" style="width: 18rem;">
+                <div class="card-body">
+                    <div class="card-header"><h3>{{ evento.titulo }}</h3></div>
+
+                    <p class="card-text">Data: {{ evento.get_data_evento }}</p>
+                    <p class="card-text">Descrição: {{ evento.descricao }}</p>
+                    <a href="evento/?id={{ evento.id }}" class="btn bg-warning">Editar</a>
+                    <a href="evento/delete/{{ evento.id }}/" class="btn bg-danger ">Excluir</a>
+
                 </div>
-            </li>
-        {% endfor %}
-    </ul>
+            </div>
+        </div>
+
+{% endfor %}
+
 {% endblock %}
