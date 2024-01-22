@@ -46,20 +46,20 @@ Para utilizar o login o usuário deve ser previamente cadastrado utilizando os c
 
 ### Home
 A tela inicial apresenta os agendamentos mais recentes do dia.
-![Home](![image](https://github.com/Carlos-Daniel-SS/agenda/assets/69223907/4ce17337-d357-4205-bd25-f2c451585b5a)
+![home](https://github.com/Carlos-Daniel-SS/agenda/assets/69223907/4ce17337-d357-4205-bd25-f2c451585b5a)
 
 
 ### Criação
 
 O projeto permite a criação de novos eventos de forma intuitiva. O usuário pode definir o título do seu evento, a data e uma descrição.
 
-![Evento](![image](https://github.com/Carlos-Daniel-SS/agenda/assets/69223907/5af8a961-3840-414b-abff-f9ad0cfc983b)
+![criar](https://github.com/Carlos-Daniel-SS/agenda/assets/69223907/5af8a961-3840-414b-abff-f9ad0cfc983b)
 
 ### Edição
 
 No projeto é possível realizar a edição dos eventos cadastrados.
 
-![Evento](![image](![image](https://github.com/Carlos-Daniel-SS/agenda/assets/69223907/358d79c4-70bb-49db-b80b-f443a066c816)
+![editar](https://github.com/Carlos-Daniel-SS/agenda/assets/69223907/358d79c4-70bb-49db-b80b-f443a066c816)
 
 ### Remoção
 
